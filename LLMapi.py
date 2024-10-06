@@ -80,6 +80,14 @@ class LLMapi:
         )
         return response.choices[0].message.content
 
+    def extract_relation(self, prompt):
+        response = self.client.chat.completions.create(
+            model="deepseek-chat",
+            messages=prompt,
+            stream=False
+        )
+        return response.choices[0].message.content
+
 
 # Todo：数据增强，模型微调
 # Todo：可以用beg模型来将问句与实体数据库、关系数据库中的词进行近义查询，搜索查找到的实体
