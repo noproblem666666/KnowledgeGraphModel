@@ -113,7 +113,7 @@ class MysqlToNeo4j:
                     except Exception as e:
                         print("插入到neo4j时产生错误：", e)
 
-    def search_node(self,name,graph):
+    def search_node(self, name, graph):
         alice = graph.nodes.match(name=name).first()
 
         # 检查是否找到节点
@@ -131,14 +131,14 @@ class MysqlToNeo4j:
                 print(rel.end_node)
 
 
-
 if __name__ == '__main__':
     r = MysqlToNeo4j()
     r.search_mysql()
     graph = Graph("http://localhost:7474", auth=("neo4j", "lzg19981202"), name="neo4j")
     while True:
+        # Todo：把结点查询出的消息放入大模型，让大模型生成相关回答
         user_input = input("请输入要查询的相关结点: ")
-        r.search_node(user_input,graph)
+        r.search_node(user_input, graph)
     # r.insert_entity(graph)
     # r.insert_event(graph)
     # r.insert_relation(graph)

@@ -1,5 +1,5 @@
 import pymysql
-
+import json
 
 class ReadToMysql:
     def __init__(self):
@@ -117,6 +117,18 @@ class ReadToMysql:
                 db.rollback()
         cursor.close()
         db.close()
+
+    def json_entity_json(self, data):
+        # 每个放入数组中的单条插入数据
+        title = "计算机组成原理"
+        jsons = json.loads(data)
+        for item in jsons:
+            name = item.get("entity", "").strip()
+            type = item.get("type", "").strip()
+            description = item.get("description", "").strip()
+            single_data = {"title": title, "name": name, "description": description, "type": type}
+            self.entity_data.append(single_data)
+            print(single_data)
 
 
 if __name__ == '__main__':
