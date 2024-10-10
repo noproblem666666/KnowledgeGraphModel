@@ -8,7 +8,7 @@ import pymysql
 class TextProcess:
     def __init__(self):
         self.filePath = "D:\\知识图谱录入文件\\计算机组成与体系结构.docx"
-        self.password = "lzg19981202"
+        self.password = "###"
         self.host = "localhost"
         self.user = "root"
         self.db = "knowledge_graph"

@@ -9,7 +9,7 @@ class Neo4jSearch:
         self.relation_data = []
         self.event_data = []
         # 连接数据库需要的信息
-        self.password = "lzg19981202"
+        self.password = "###"
         self.host = "localhost"
         self.user = "root"
         self.db = "knowledge_graph"

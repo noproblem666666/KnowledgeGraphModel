@@ -8,7 +8,7 @@ from Prompt import Prompt
 
 class ExtractEntity:
     def __init__(self):
-        self.password = "lzg19981202"
+        self.password = "###"
         self.host = "localhost"
         self.user = "root"
         self.db = "knowledge_graph"

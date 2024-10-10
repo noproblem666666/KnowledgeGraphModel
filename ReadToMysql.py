@@ -8,7 +8,7 @@ class ReadToMysql:
         self.relation_filePath = "C:\\Users\\maccree\\Desktop\\大语言模型和知识图谱实验\\尝试分多个机器人抽取\\抽取实体关系的机器人\\抽取出的实体关系.txt"
         self.event_filePath = "C:\\Users\\maccree\\Desktop\\大语言模型和知识图谱实验\\尝试分多个机器人抽取\\抽取实体与相关事件的机器人\\抽取出的事件以及相关实体.txt"
         # 连接数据库需要的信息
-        self.password = "lzg19981202"
+        self.password = "###"
         self.host = "localhost"
         self.user = "root"
         self.db = "knowledge_graph"

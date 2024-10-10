@@ -5,7 +5,7 @@ from Prompt import Prompt
 
 class LLMapi:
     def __init__(self):
-        self.client = OpenAI(api_key="sk-178d8772e9f14d4e886c131cb6720355", base_url="https://api.deepseek.com")
+        self.client = OpenAI(api_key="###", base_url="https://api.deepseek.com")
         self.question = [
             {"role": "user", "content": "作为一个计算机组成原理领域的教学老师，请你为学生解答各种问题"},
             {"role": "assistant", "content": "当然，作为计算机组成原理领域的教学老师，请您提供我需要解答的各种问题"},

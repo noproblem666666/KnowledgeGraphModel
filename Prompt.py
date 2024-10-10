@@ -5,7 +5,7 @@ from openai import OpenAI
 
 class Prompt:
     def __init__(self):
-        self.client = OpenAI(api_key="sk-178d8772e9f14d4e886c131cb6720355", base_url="https://api.deepseek.com")
+        self.client = OpenAI(api_key="###", base_url="https://api.deepseek.com")
         self.entity_extraction_prompt_simple1 = [{"role": "user",
                                                   "content": "你是一款擅长从中文文本中抽取出实体以及与其相关文本描述的AI机器人。你的核心能力是从文本中抽取出实体信息并按照json的格式输出，属性是entity,description,分别表示实体名称，实体描述信息,除了json数据不要输出其他任何信息"},
                                                  {"role": "assistant",
@@ -131,6 +131,10 @@ class Prompt:
                                                       "content": "你是一款擅长从中文文本中判断实体之间关系的AI机器人。你的核心能力是分析文本中实体之间的关系，并从提供的选项中选择出正确的选项，返回选项的字母即可，不要返回其他任何信息"},
                                                       {"role": "assistant",
                                                        "content": "当然，我会尽可能分析文本中实体之间的关系，并返回正确答案的选项"}]
+        self.relationship_extraction_prompt_specific = [{"role": "user",
+                                                         "content": "你是一款擅长从中文文本中判断实体之间关系的AI机器人。我会给你两个实体在文本中的基本关系类型，请你基于该前提从文本中抽取出实体之间的具体关系"},
+                                                        {"role": "assistant",
+                                                         "content": "当然，我会参照您给出的实体间基本关系类型，尽可能抽取两个实体在文本中的具体关系并进行返回，返回格式为：两个实体在文中的具体关系是："}]
         self.relationship_extraction_prompt = [{"role": "user",
                                                 "content": "你是一款擅长从中文文本中判断两个实体之间关系的AI机器人。你的核心能力是对文本中两个实体间的关系做出判断，并在提供的选项中选择最合适的进行输出"},
                                                {"role": "assistant",
